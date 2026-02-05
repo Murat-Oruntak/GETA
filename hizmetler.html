@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GETA Alüminyum Doğrama Mobilya İnşaat Hizmetleri - Alüminyum doğrama, PVC, mobilya, tadilat ve daha fazlası">
+    <title>Hizmetlerimiz | GETA Alüminyum Doğrama Mobilya İnşaat</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .service-detail {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px var(--shadow);
+            margin-bottom: 40px;
+        }
+        .service-detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+        .service-detail:nth-child(even) .service-detail-content {
+            direction: rtl;
+        }
+        .service-detail:nth-child(even) .service-detail-content > * {
+            direction: ltr;
+        }
+        .service-detail-image {
+            min-height: 350px;
+            background-size: cover;
+            background-position: center;
+        }
+        .service-detail-text {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .service-detail-text h3 {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .service-detail-text h3 i {
+            color: var(--primary);
+            font-size: 32px;
+        }
+        .service-detail-text p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .service-detail-text ul {
+            list-style: none;
+            padding: 0;
+        }
+        .service-detail-text ul li {
+            padding: 8px 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .service-detail-text ul li i {
+            color: var(--primary);
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .service-detail-content {
+                grid-template-columns: 1fr;
+            }
+            .service-detail:nth-child(even) .service-detail-content {
+                direction: ltr;
+            }
+            .service-detail-image {
+                min-height: 250px;
+            }
+            .service-detail-text {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 0551 655 15 60</span>
+                    <span><i class="fas fa-envelope"></i> Getadekorasyon@gmail.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Çiğli, İzmir</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="GETA Logo">
+                </a>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="hizmetler.html" class="active">Hizmetler</a></li>
+                        <li><a href="referanslar.html">Referanslar</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Hizmetlerimiz</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Anasayfa</a>
+                <span>/</span>
+                <span>Hizmetlerimiz</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Detail Section -->
+    <section style="padding: 100px 0;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 80px;">
+                <h2>Hizmet Alanlarımız</h2>
+                <p>Profesyonel ekibimiz ve kaliteli malzemelerimizle tüm ihtiyaçlarınıza çözüm sunuyoruz</p>
+            </div>
+
+            <!-- Alüminyum Doğrama -->
+            <div class="service-detail scroll-reveal">
+                <div class="service-detail-content">
+                    <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop');"></div>
+                    <div class="service-detail-text">
+                        <h3><i class="fas fa-window-maximize"></i> Alüminyum Doğrama</h3>
+                        <p>Tüm serilerde alüminyum doğrama imalat ve montajı gerçekleştiriyoruz. Isı yalıtımlı ve standart sistemlerle enerji tasarrufu sağlayan çözümler sunuyoruz.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Isıcam sistemleri</li>
+                            <li><i class="fas fa-check"></i> Alüminyum pencere ve kapı</li>
+                            <li><i class="fas fa-check"></i> Alüminyum ve krom korkuluk</li>
+                            <li><i class="fas fa-check"></i> Cam balkon tüm serileri</li>
+                            <li><i class="fas fa-check"></i> Sineklik sistemleri</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PVC Doğrama -->
+            <div class="service-detail scroll-reveal">
+                <div class="service-detail-content">
+                    <div class="service-detail-image" style="background-image: url('images/Kapı/WhatsApp Image 2026-02-04 at 22.48.37.jpeg');"></div>
+                    <div class="service-detail-text">
+                        <h3><i class="fas fa-door-open"></i> PVC Doğrama</h3>
+                        <p>Yüksek kaliteli PVC pencere ve kapı sistemleri ile mekanlarınıza değer katıyoruz. Ses ve ısı yalıtımında üstün performans sunan ürünlerimizle konforunuzu artırıyoruz.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> PVC pencere sistemleri</li>
+                            <li><i class="fas fa-check"></i> PVC kapı sistemleri</li>
+                            <li><i class="fas fa-check"></i> Sineklik işleri</li>
+                            <li><i class="fas fa-check"></i> Isı ve ses yalıtımı</li>
+                            <li><i class="fas fa-check"></i> Egepen, Winsa, Saray markaları</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobilya -->
+            <div class="service-detail scroll-reveal">
+                <div class="service-detail-content">
+                    <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=400&fit=crop');"></div>
+                    <div class="service-detail-text">
+                        <h3><i class="fas fa-couch"></i> Mobilya İmalat</h3>
+                        <p>Hazır mutfak, banyo dolabı, gardrop, vestiyer ve büro mobilyası imalatı yapıyoruz. İhtiyacınıza özel tasarımlarla mekanlarınızı fonksiyonel hale getiriyoruz.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Hazır mutfak dolapları</li>
+                            <li><i class="fas fa-check"></i> Banyo dolabı</li>
+                            <li><i class="fas fa-check"></i> Gardrop ve vestiyer</li>
+                            <li><i class="fas fa-check"></i> Oda kapısı</li>
+                            <li><i class="fas fa-check"></i> Yaşam ünitesi ve çocuk odası</li>
+                            <li><i class="fas fa-check"></i> Büro mobilyası</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tadilat -->
+            <div class="service-detail scroll-reveal">
+                <div class="service-detail-content">
+                    <div class="service-detail-image" style="background-image: url('https://plus.unsplash.com/premium_photo-1683121602687-60c47b2222f0?w=600&h=400&fit=crop');"></div>
+                    <div class="service-detail-text">
+                        <h3><i class="fas fa-tools"></i> Tadilat & Renovasyon</h3>
+                        <p>Komple daire tadilatından küçük onarımlara kadar tüm tadilat işlerinizi profesyonel ekibimizle gerçekleştiriyoruz.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Komple daire tadilatı</li>
+                            <li><i class="fas fa-check"></i> İç dekorasyon</li>
+                            <li><i class="fas fa-check"></i> Alçıpan ve alçı işleri</li>
+                            <li><i class="fas fa-check"></i> Sıva ve boya işleri</li>
+                            <li><i class="fas fa-check"></i> Seramik döşeme</li>
+                            <li><i class="fas fa-check"></i> PVC yer döşemesi</li>
+                            <li><i class="fas fa-check"></i> Laminant parke döşeme</li>
+                            <li><i class="fas fa-check"></i> Su ve elektrik tesisatı</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Çatı & Cephe -->
+            <div class="service-detail scroll-reveal">
+                <div class="service-detail-content">
+                    <div class="service-detail-image" style="background-image: url('images/Dış Cephe/1.jpeg');"></div>
+                    <div class="service-detail-text">
+                        <h3><i class="fas fa-warehouse"></i> Çatı & Cephe İşleri</h3>
+                        <p>Çatı onarımından cephe kaplamasına kadar dış mekan işlerinizde yanınızdayız. Modern malzemeler ve uzman işçilikle binanızı yeniliyoruz.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Çatı işleri</li>
+                            <li><i class="fas fa-check"></i> Dış cephe giydirme</li>
+                            <li><i class="fas fa-check"></i> İzolasyon işleri</li>
+                            <li><i class="fas fa-check"></i> Kompozit panel kaplama</li>
+                            <li><i class="fas fa-check"></i> Cam işleri</li>
+                            <li><i class="fas fa-check"></i> Ofis bölmeleri</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Otomatik Sistemler -->
+            <div class="service-detail scroll-reveal">
+                <div class="service-detail-content">
+                    <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1507035159636-7a86eb324885?w=600&h=400&fit=crop');"></div>
+                    <div class="service-detail-text">
+                        <h3><i class="fas fa-dungeon"></i> Otomatik Kapı & Kepenk</h3>
+                        <p>Fotosel kayar kapılar, otomatik panjurlar, çelik kepenkler ve yangın kapıları ile işyeriniz ve eviniz için güvenli ve konforlu çözümler sunuyoruz.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Fotosel kayar kapılar</li>
+                            <li><i class="fas fa-check"></i> Otomatik ithal panjur çeşitleri</li>
+                            <li><i class="fas fa-check"></i> Çelik saç kepenk</li>
+                            <li><i class="fas fa-check"></i> Yangın kapısı</li>
+                            <li><i class="fas fa-check"></i> Dorma ve Manusa sistemleri</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tiny House -->
+            <div class="service-detail scroll-reveal">
+                <div class="service-detail-content">
+                    <div class="service-detail-image" style="background-image: url('images/Tiny House/2.jpeg');"></div>
+                    <div class="service-detail-text">
+                        <h3><i class="fas fa-home"></i> Tiny House</h3>
+                        <p>Modern yaşamın yeni trendi Tiny House projelerinizi anahtar teslim olarak gerçekleştiriyoruz. Kompakt, fonksiyonel ve şık tasarımlarla hayalinizdeki mini evi inşa ediyoruz.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Anahtar teslim Tiny House</li>
+                            <li><i class="fas fa-check"></i> Özel tasarım projeler</li>
+                            <li><i class="fas fa-check"></i> Mobil ve sabit modeller</li>
+                            <li><i class="fas fa-check"></i> Tam donanımlı iç mekan</li>
+                            <li><i class="fas fa-check"></i> Enerji verimli sistemler</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paslanmaz İmalat -->
+            <div class="service-detail scroll-reveal">
+                <div class="service-detail-content">
+                    <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop');"></div>
+                    <div class="service-detail-text">
+                        <h3><i class="fas fa-grip-lines"></i> Paslanmaz İmalat</h3>
+                        <p>Paslanmaz çelik malzemeler ile dayanıklı ve estetik çözümler sunuyoruz. Korkuluk, küpeşte, kapı ve özel imalat projelerinizde yanınızdayız.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Paslanmaz korkuluk sistemleri</li>
+                            <li><i class="fas fa-check"></i> Paslanmaz küpeşte</li>
+                            <li><i class="fas fa-check"></i> Paslanmaz kapı ve pencere</li>
+                            <li><i class="fas fa-check"></i> Endüstriyel paslanmaz imalat</li>
+                            <li><i class="fas fa-check"></i> Özel tasarım projeler</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="container">
+            <h3>Çalıştığımız Markalar</h3>
+            <div class="brands-slider">
+                <span>DORMA</span>
+                <span>MANUSA</span>
+                <span>ALUSER</span>
+                <span>SARAY</span>
+                <span>ASISTAL</span>
+                <span>EGEPEN</span>
+                <span>WINSA</span>
+                <span>HAFELE</span>
+                <span>ISICAM</span>
+                <span>KAHE</span>
+                <span>SARAY BOND</span>
+                <span>VITRA</span>
+                <span>ÇAMSAN</span>
+                <span>ALYA AHŞAP</span>
+                <span>GÖKTAŞ</span>
+                <span>KALE</span>
+                <span>MARSHALL</span>
+                <span>DYO</span>
+                <span>FİLLİ BOYA</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Projeniz İçin Teklif Alın</h2>
+            <p>Ücretsiz keşif ve fiyat teklifi için hemen bizimle iletişime geçin. Uzman ekibimiz size en uygun çözümü sunacaktır.</p>
+            <a href="iletisim.html" class="btn btn-outline">Hemen Arayın</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>GETA</h3>
+                    <p>2016'dan bu yana İzmir ve çevresinde alüminyum doğrama, PVC, mobilya ve komple tadilat hizmetleri sunmaktayız. Kaliteli işçilik ve müşteri memnuniyeti önceliğimizdir.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="referanslar.html">Referanslar</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Hizmetler</h4>
+                    <ul>
+                        <li><a href="hizmetler.html">Alüminyum Doğrama</a></li>
+                        <li><a href="hizmetler.html">PVC Doğrama</a></li>
+                        <li><a href="hizmetler.html">Mobilya</a></li>
+                        <li><a href="hizmetler.html">Tadilat</a></li>
+                        <li><a href="hizmetler.html">Cam Balkon</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>İletişim</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Ahmet Efendi Mah. 1107 Sok. No:5A Çiğli / İzmir</p>
+                    <p><i class="fas fa-phone"></i> 0551 655 15 60 - 0546 299 97 61</p>
+                    <p><i class="fas fa-envelope"></i> Getadekorasyon@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GETA Alüminyum Doğrama Mobilya İnşaat. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
