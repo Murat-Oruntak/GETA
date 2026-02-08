@@ -1131,6 +1131,19 @@ footer {
     .contact-form-box {
         padding: 30px;
     }
+
+    /* Hakkımızda sayfası - Mobil grid düzeltmeleri */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .services-grid[style*="repeat(2"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    .services-grid[style*="repeat(4"] {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 @media (max-width: 480px) {
