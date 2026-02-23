@@ -609,6 +609,7 @@ section {
 .brands {
     background: linear-gradient(135deg, var(--dark) 0%, var(--charcoal) 100%);
     padding: 60px 0;
+    overflow: hidden;
 }
 
 .brands h3 {
@@ -619,28 +620,102 @@ section {
     font-weight: 600;
 }
 
-.brands-slider {
+.brands-marquee-wrapper {
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+}
+
+.brands-marquee-wrapper::before,
+.brands-marquee-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.brands-marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--dark), transparent);
+}
+
+.brands-marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--charcoal), transparent);
+}
+
+.brands-marquee {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     gap: 20px;
+    width: max-content;
+    animation: marqueeScroll 25s linear infinite;
 }
 
-.brands-slider span {
+.brands-marquee.reverse {
+    animation: marqueeScrollReverse 25s linear infinite;
+}
+
+.brands-marquee-wrapper + .brands-marquee-wrapper {
+    margin-top: 15px;
+}
+
+.brands-marquee span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
     color: var(--silver);
-    font-size: 16px;
-    font-weight: 600;
-    padding: 12px 25px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 5px;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: var(--transition);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
 }
 
-.brands-slider span:hover {
+.brands-marquee span:hover {
     background: var(--primary);
     color: var(--white);
     border-color: var(--primary);
+    transform: scale(1.08);
+    box-shadow: 0 4px 20px rgba(178, 34, 34, 0.4);
+}
+
+.brands-marquee-wrapper:hover .brands-marquee {
+    animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeScrollReverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Hide old styles */
+.brands-carousel-wrapper,
+.brands-slider {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .brands-marquee span {
+        padding: 10px 22px;
+        font-size: 13px;
+    }
+    .brands-marquee-wrapper::before,
+    .brands-marquee-wrapper::after {
+        width: 40px;
+    }
 }
 
 /* CTA Section */

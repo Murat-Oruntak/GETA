@@ -305,6 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="lightbox-close">&times;</span>
                     <span class="lightbox-nav lightbox-prev"><i class="fas fa-chevron-left"></i></span>
                     <img src="" alt="Gallery Image" id="lightbox-img">
+                    <video src="" id="lightbox-video" controls playsinline style="display:none; max-width:90vw; max-height:80vh; border-radius:10px;"></video>
                     <span class="lightbox-nav lightbox-next"><i class="fas fa-chevron-right"></i></span>
                     <div class="lightbox-counter" id="lightbox-counter"></div>
                     <div class="lightbox-title" id="lightbox-title"></div>
@@ -315,6 +316,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxVideo = document.getElementById('lightbox-video');
         const lightboxCounter = document.getElementById('lightbox-counter');
         const lightboxTitle = document.getElementById('lightbox-title');
         const closeBtn = lightbox.querySelector('.lightbox-close');
@@ -323,6 +325,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let currentGallery = [];
         let currentIndex = 0;
+
+        const isVideo = function(src) {
+            return /\.(mp4|webm|ogg|mov)$/i.test(src);
+        };
 
         // Open lightbox
         window.openGallery = function(images, title, startIndex = 0) {
@@ -334,9 +340,20 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = 'hidden';
         };
 
-        // Show current image
+        // Show current image or video
         const showImage = function() {
-            lightboxImg.src = currentGallery[currentIndex];
+            const src = currentGallery[currentIndex];
+            if (isVideo(src)) {
+                lightboxImg.style.display = 'none';
+                lightboxVideo.style.display = 'block';
+                lightboxVideo.src = src;
+                lightboxVideo.play();
+            } else {
+                lightboxVideo.style.display = 'none';
+                lightboxVideo.pause();
+                lightboxImg.style.display = 'block';
+                lightboxImg.src = src;
+            }
             lightboxCounter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
         };
 
@@ -356,6 +373,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const closeLightbox = function() {
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
+            lightboxVideo.pause();
+            lightboxVideo.src = '';
         };
 
         // Event listeners

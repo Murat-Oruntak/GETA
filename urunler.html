@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GETA Alüminyum Doğrama Mobilya İnşaat - Ürün ve Çalışmalarımız">
+    <title>Ürün ve Çalışmalarımız | GETA Alüminyum Doğrama Mobilya İnşaat</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px var(--shadow);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px var(--shadow-dark);
+        }
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--metallic));
+            transform: scaleX(0);
+            transition: all 0.3s ease;
+        }
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+        .product-card-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        .product-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .product-card-image img {
+            transform: scale(1.08);
+        }
+        .product-card-image .photo-count {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .product-card-image .photo-count i {
+            margin-right: 6px;
+        }
+        .product-card-image .video-badge {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background: var(--primary);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .product-card-body {
+            padding: 25px;
+            text-align: center;
+        }
+        .product-card-body h3 {
+            font-size: 20px;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .product-card-body h3 i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+        .product-card-body p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 0551 655 15 60</span>
+                    <span><i class="fas fa-envelope"></i> Getadekorasyon@gmail.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Çiğli, İzmir</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="GETA Logo">
+                </a>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="urunler.html" class="active">Ürünlerimiz</a></li>
+                        <li><a href="referanslar.html">Referanslar</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Ürün ve Çalışmalarımız</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Anasayfa</a>
+                <span>/</span>
+                <span>Ürünlerimiz</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section style="padding: 100px 0;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 60px;">
+                <h2>Ürün Kategorilerimiz</h2>
+                <p>Kategoriyi seçerek ürün ve çalışmalarımızı inceleyebilirsiniz</p>
+            </div>
+
+            <div class="products-grid">
+
+                <!-- Mutfak Dolapları -->
+                <div class="product-card scroll-reveal" onclick="openGallery(mutfakImages, 'Mutfak Dolapları', 0)">
+                    <div class="product-card-image">
+                        <img src="images/Yeniler/Gencay Foto/Gencay Foto/Mutfak Dolapları/1.jpg" alt="Mutfak Dolapları" loading="lazy">
+                        <span class="photo-count"><i class="fas fa-images"></i> 23 Fotoğraf</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3><i class="fas fa-utensils"></i> Mutfak Dolapları</h3>
+                        <p>Özel tasarım mutfak dolabı çözümleri</p>
+                    </div>
+                </div>
+
+                <!-- İç Oda Kapıları -->
+                <div class="product-card scroll-reveal" onclick="openGallery(kapiImages, 'İç Oda Kapıları', 0)">
+                    <div class="product-card-image">
+                        <img src="images/Yeniler/Gencay Foto/Gencay Foto/iç Oda Kapı Modelleri/1.jpg" alt="İç Oda Kapıları" loading="lazy">
+                        <span class="photo-count"><i class="fas fa-images"></i> 15 Fotoğraf</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3><i class="fas fa-door-closed"></i> İç Oda Kapıları</h3>
+                        <p>Modern iç oda kapı modelleri</p>
+                    </div>
+                </div>
+
+                <!-- Banyo Dolapları -->
+                <div class="product-card scroll-reveal" onclick="openGallery(banyoImages, 'Banyo Dolapları', 0)">
+                    <div class="product-card-image">
+                        <img src="images/Yeniler/Gencay Foto/Gencay Foto/Banyo Dolapları/1.jpg" alt="Banyo Dolapları" loading="lazy">
+                        <span class="photo-count"><i class="fas fa-images"></i> 8 Fotoğraf</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3><i class="fas fa-bath"></i> Banyo Dolapları</h3>
+                        <p>Şık ve fonksiyonel banyo dolapları</p>
+                    </div>
+                </div>
+
+                <!-- Gardroplar -->
+                <div class="product-card scroll-reveal" onclick="openGallery(gardropImages, 'Gardroplar', 0)">
+                    <div class="product-card-image">
+                        <img src="images/Yeniler/Gencay Foto/Gencay Foto/Gardroplar/1.jpg" alt="Gardroplar" loading="lazy">
+                        <span class="photo-count"><i class="fas fa-images"></i> 12 Fotoğraf</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3><i class="fas fa-archive"></i> Gardroplar</h3>
+                        <p>Özel ölçü gardrop ve vestiyer</p>
+                    </div>
+                </div>
+
+                <!-- Çelik Kapılar -->
+                <div class="product-card scroll-reveal" onclick="openGallery(celikImages, 'Çelik Kapılar', 0)">
+                    <div class="product-card-image">
+                        <img src="images/Yeniler/Gencay Foto/Gencay Foto/Çelik Kapılar/foto_0 (1).jpg" alt="Çelik Kapılar" loading="lazy">
+                        <span class="photo-count"><i class="fas fa-images"></i> 10 Fotoğraf</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3><i class="fas fa-shield-alt"></i> Çelik Kapılar</h3>
+                        <p>Güvenli ve dayanıklı çelik kapı modelleri</p>
+                    </div>
+                </div>
+
+                <!-- Ferforje Kapılar -->
+                <div class="product-card scroll-reveal" onclick="openGallery(ferforjeImages, 'Ferforje Kapılar', 0)">
+                    <div class="product-card-image">
+                        <img src="images/Yeniler/Gencay Foto/Gencay Foto/ferforje Kapılar/foto_0.jpg" alt="Ferforje Kapılar" loading="lazy">
+                        <span class="photo-count"><i class="fas fa-images"></i> 10 Fotoğraf</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3><i class="fas fa-archway"></i> Ferforje Kapılar</h3>
+                        <p>Dekoratif ferforje kapı tasarımları</p>
+                    </div>
+                </div>
+
+                <!-- Ahşap Tezgahlar -->
+                <div class="product-card scroll-reveal" onclick="openGallery(ahsapImages, 'Ahşap Tezgahlar', 0)">
+                    <div class="product-card-image">
+                        <img src="images/Yeniler/Gencay Foto/Gencay Foto/Ahşap Tezgahlar/5.jpg" alt="Ahşap Tezgahlar" loading="lazy">
+                        <span class="photo-count"><i class="fas fa-images"></i> 6 Fotoğraf</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3><i class="fas fa-tree"></i> Ahşap Tezgahlar</h3>
+                        <p>Doğal ahşap tezgah uygulamaları</p>
+                    </div>
+                </div>
+
+                <!-- Lake Çalışmaları -->
+                <div class="product-card scroll-reveal" onclick="openGallery(lakeImages, 'Lake Çalışmaları', 0)">
+                    <div class="product-card-image">
+                        <img src="images/Yeniler/Gencay Foto/Gencay Foto/Lake Çalışmaları/foto_1 (1).jpg" alt="Lake Çalışmaları" loading="lazy">
+                        <span class="photo-count"><i class="fas fa-images"></i> 6 Fotoğraf</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3><i class="fas fa-paint-roller"></i> Lake Çalışmaları</h3>
+                        <p>Profesyonel lake boya uygulamaları</p>
+                    </div>
+                </div>
+
+                <!-- Merdiven Kaplama -->
+                <div class="product-card scroll-reveal" onclick="openGallery(merdivenImages, 'Merdiven Kaplama', 0)">
+                    <div class="product-card-image">
+                        <img src="images/Yeniler/Gencay Foto/Gencay Foto/merdiven kaplama/1.jpg" alt="Merdiven Kaplama" loading="lazy">
+                        <span class="photo-count"><i class="fas fa-images"></i> 8 Fotoğraf</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3><i class="fas fa-layer-group"></i> Merdiven Kaplama</h3>
+                        <p>Ahşap merdiven kaplama işleri</p>
+                    </div>
+                </div>
+
+                <!-- Özel Tasarımlar -->
+                <div class="product-card scroll-reveal" onclick="openGallery(ozelImages, 'Özel Tasarımlar', 0)">
+                    <div class="product-card-image">
+                        <img src="images/Yeniler/Gencay Foto/Gencay Foto/Özel tasarımlar/1.jpg" alt="Özel Tasarımlar" loading="lazy">
+                        <span class="photo-count"><i class="fas fa-images"></i> 14 Fotoğraf</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3><i class="fas fa-gem"></i> Özel Tasarımlar</h3>
+                        <p>İsteğe özel mobilya ve dekorasyon</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Projeniz İçin Teklif Alın</h2>
+            <p>Ücretsiz keşif ve fiyat teklifi için hemen bizimle iletişime geçin.</p>
+            <a href="iletisim.html" class="btn btn-outline">İletişime Geçin</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>GETA</h3>
+                    <p>2006'dan bu yana İzmir ve çevresinde alüminyum doğrama, PVC, mobilya ve komple tadilat hizmetleri sunmaktayız. Kaliteli işçilik ve müşteri memnuniyeti önceliğimizdir.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="urunler.html">Ürünlerimiz</a></li>
+                        <li><a href="referanslar.html">Referanslar</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Hizmetler</h4>
+                    <ul>
+                        <li><a href="hizmetler.html">Alüminyum Doğrama</a></li>
+                        <li><a href="hizmetler.html">PVC Doğrama</a></li>
+                        <li><a href="hizmetler.html">Mobilya</a></li>
+                        <li><a href="hizmetler.html">Tadilat</a></li>
+                        <li><a href="hizmetler.html">Cam Balkon</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>İletişim</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Ahmet Efendi Mah. 1107 Sok. No:5A Çiğli / İzmir</p>
+                    <p><i class="fas fa-phone"></i> 0551 655 15 60 - 0546 299 97 61</p>
+                    <p><i class="fas fa-envelope"></i> Getadekorasyon@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GETA Alüminyum Doğrama Mobilya İnşaat. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const basePath = 'images/Yeniler/Gencay Foto/Gencay Foto/';
+
+        const mutfakImages = [];
+        for (let i = 1; i <= 23; i++) mutfakImages.push(basePath + 'Mutfak Dolapları/' + i + '.jpg');
+
+        const kapiImages = [];
+        for (let i = 1; i <= 15; i++) kapiImages.push(basePath + 'iç Oda Kapı Modelleri/' + i + '.jpg');
+
+        const banyoImages = [];
+        for (let i = 1; i <= 8; i++) banyoImages.push(basePath + 'Banyo Dolapları/' + i + '.jpg');
+
+        const gardropImages = [
+            basePath + 'Gardroplar/1.jpg', basePath + 'Gardroplar/1.1.jpg',
+            basePath + 'Gardroplar/2.jpg', basePath + 'Gardroplar/3.jpg',
+            basePath + 'Gardroplar/4.jpg', basePath + 'Gardroplar/5.jpg',
+            basePath + 'Gardroplar/6.jpg', basePath + 'Gardroplar/7.jpg',
+            basePath + 'Gardroplar/8.jpg', basePath + 'Gardroplar/9.jpg',
+            basePath + 'Gardroplar/11.jpg', basePath + 'Gardroplar/12.jpg'
+        ];
+
+        const celikImages = [
+            basePath + 'Çelik Kapılar/foto_0 (1).jpg', basePath + 'Çelik Kapılar/foto_1 (1).jpg',
+            basePath + 'Çelik Kapılar/foto_2 (1).jpg', basePath + 'Çelik Kapılar/foto_3 (1).jpg',
+            basePath + 'Çelik Kapılar/foto_4 (1).jpg', basePath + 'Çelik Kapılar/foto_5.jpg',
+            basePath + 'Çelik Kapılar/foto_6.jpg', basePath + 'Çelik Kapılar/foto_7 (1).jpg',
+            basePath + 'Çelik Kapılar/foto_8 (1).jpg', basePath + 'Çelik Kapılar/foto_9 (1).jpg'
+        ];
+
+        const ferforjeImages = [
+            basePath + 'ferforje Kapılar/foto_0.jpg', basePath + 'ferforje Kapılar/foto_1 (1).jpg',
+            basePath + 'ferforje Kapılar/foto_2 (1).jpg', basePath + 'ferforje Kapılar/foto_3 (1).jpg',
+            basePath + 'ferforje Kapılar/foto_4 (1).jpg', basePath + 'ferforje Kapılar/foto_5.jpg',
+            basePath + 'ferforje Kapılar/foto_6.jpg', basePath + 'ferforje Kapılar/foto_7 (1).jpg',
+            basePath + 'ferforje Kapılar/foto_8 (1).jpg', basePath + 'ferforje Kapılar/foto_9 (1).jpg'
+        ];
+
+        const ahsapImages = [5,6,7,8,9,10].map(i => basePath + 'Ahşap Tezgahlar/' + i + '.jpg');
+
+        const lakeImages = [
+            basePath + 'Lake Çalışmaları/foto_1 (1).jpg', basePath + 'Lake Çalışmaları/foto_5 (1).jpg',
+            basePath + 'Lake Çalışmaları/foto_7.jpg', basePath + 'Lake Çalışmaları/foto_8.jpg',
+            basePath + 'Lake Çalışmaları/foto_9.jpg', basePath + 'Lake Çalışmaları/foto_10.jpg'
+        ];
+
+        const merdivenImages = [];
+        for (let i = 1; i <= 8; i++) merdivenImages.push(basePath + 'merdiven kaplama/' + i + '.jpg');
+
+        const ozelImages = [
+            basePath + 'Özel tasarımlar/1.jpg', basePath + 'Özel tasarımlar/1,1.jpg',
+            basePath + 'Özel tasarımlar/2.jpg', basePath + 'Özel tasarımlar/4.jpg',
+            basePath + 'Özel tasarımlar/5.jpg', basePath + 'Özel tasarımlar/6.jpg',
+            basePath + 'Özel tasarımlar/7.jpg', basePath + 'Özel tasarımlar/8.jpg',
+            basePath + 'Özel tasarımlar/9.jpg', basePath + 'Özel tasarımlar/10.jpg',
+            basePath + 'Özel tasarımlar/11.jpg', basePath + 'Özel tasarımlar/12.jpg',
+            basePath + 'Özel tasarımlar/13.jpeg', basePath + 'Özel tasarımlar/14.jpeg'
+        ];
+
+    </script>
+</body>
+</html>
