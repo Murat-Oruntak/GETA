@@ -307,6 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <img src="" alt="Gallery Image" id="lightbox-img">
                     <video src="" id="lightbox-video" controls playsinline style="display:none; max-width:90vw; max-height:80vh; border-radius:10px;"></video>
                     <span class="lightbox-nav lightbox-next"><i class="fas fa-chevron-right"></i></span>
+                    <div class="lightbox-caption" id="lightbox-caption" style="color:#ccc; text-align:center; margin-top:8px; font-size:14px; max-width:90vw;"></div>
                     <div class="lightbox-counter" id="lightbox-counter"></div>
                     <div class="lightbox-title" id="lightbox-title"></div>
                 </div>
@@ -317,6 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxVideo = document.getElementById('lightbox-video');
+        const lightboxCaption = document.getElementById('lightbox-caption');
         const lightboxCounter = document.getElementById('lightbox-counter');
         const lightboxTitle = document.getElementById('lightbox-title');
         const closeBtn = lightbox.querySelector('.lightbox-close');
@@ -342,7 +344,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Show current image or video
         const showImage = function() {
-            const src = currentGallery[currentIndex];
+            const item = currentGallery[currentIndex];
+            const src = typeof item === 'string' ? item : item.src;
+            const caption = typeof item === 'string' ? '' : (item.caption || '');
             if (isVideo(src)) {
                 lightboxImg.style.display = 'none';
                 lightboxVideo.style.display = 'block';
@@ -354,6 +358,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 lightboxImg.style.display = 'block';
                 lightboxImg.src = src;
             }
+            lightboxCaption.textContent = caption;
+            lightboxCaption.style.display = caption ? 'block' : 'none';
             lightboxCounter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
         };
 
